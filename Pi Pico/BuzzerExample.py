@@ -1,10 +1,10 @@
-from machine import Pin
+from machine import Pin, PWM
 import utime
 from GroveSensors.Digital.buzzer import Music
 
 
 # Buzzer is connected to pin 20
-buzzer = Music(Pin(20))
+buzzer = Music(PWM(Pin(20)))
 
 
 # Play a tone
