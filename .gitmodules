@@ -1,0 +1,3 @@
+[submodule "Pi Pico/GroveSensors"]
+	path = Pi Pico/GroveSensors
+	url = https://github.com/Sirtsu55/PicoGroveSensors.git

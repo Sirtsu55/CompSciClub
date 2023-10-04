@@ -2,11 +2,11 @@
 
 from machine import Pin
 import utime
-from UltrasonicSensor import UltrasonicSensor
+from GroveSensors.Digital.UltrasonicSensor import UltrasonicSensor
 
 # Pins are same for receiving and sending
 
-sensor = UltrasonicSensor(16)
+sensor = UltrasonicSensor(Pin(16))
 
 while True:
     print(sensor.GetDistance())
