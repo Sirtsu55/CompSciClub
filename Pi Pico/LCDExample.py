@@ -3,6 +3,11 @@ import utime
 from GroveSensors.I2C.lcd1602 import LCD1602
 
 # These are the pins that the Grove LCD is connected to
+# The I2C0 is connected to scl=Pin(9), sda=Pin(8)
+# The I2C1 is connected to scl=Pin(1), sda=Pin(0)
+# The first parameter is the I2C bus number so if you use I2C1 then you need to specify 1 
+# or if you use I2C0 then you need to specify 0
+# Frequency is 400000 (400kHz), so 
 connection = I2C(0, scl=Pin(9), sda=Pin(8), freq=400000)
 
 # There is 2 lines and 16 characters in each line
