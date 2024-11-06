@@ -1,24 +1,27 @@
 from machine import Pin, PWM
-import utime
 from GroveSensors.Digital.buzzer import Music
+from time import sleep
+
+pwm = PWM(Pin(20))
+mu = Music(pwm)
+
+mu.music(8)
+sleep(1)
+mu.music(7)
+sleep(1)
+mu.music(6)
+sleep(1)
+mu.music(5)
+sleep(1)
+mu.music(4)
+sleep(1)
+mu.music(3)
+sleep(1)
+mu.music(2)
+sleep(1)
+mu.music(1)
+sleep(1)
+mu.music(0)
 
 
-# Buzzer is connected to pin 20
-buzzer = Music(PWM(Pin(20)))
 
-
-# Play a tone
-# There are 0-8 tones, 0 is no tone
-buzzer.music(1)
-
-# Wait for a second
-utime.sleep(0.1)
-
-# Play a tone
-buzzer.music(2)
-
-# Wait for a second
-utime.sleep(0.1)
-
-# Stop the tone
-buzzer.music(0)
