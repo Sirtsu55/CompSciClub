@@ -1,5 +1,5 @@
 from machine import Pin, I2C
-import utime
+from time import sleep
 from GroveSensors.I2C.lcd1602 import LCD1602
 
 # These are the pins that the Grove LCD is connected to
@@ -8,7 +8,7 @@ from GroveSensors.I2C.lcd1602 import LCD1602
 # The first parameter is the I2C bus number so if you use I2C1 then you need to specify 1 
 # or if you use I2C0 then you need to specify 0
 # Frequency is 400000 (400kHz), so 
-connection = I2C(0, scl=Pin(9), sda=Pin(8), freq=400000)
+connection = I2C(1, scl=Pin(7), sda=Pin(6), freq=400000)
 
 # There is 2 lines and 16 characters in each line
 lcd = LCD1602(connection, 2, 16)
@@ -23,7 +23,7 @@ lcd.setCursor(0, 1)
 lcd.print("Hello, World!")
 
 # Wait for a second
-utime.sleep(1)
+sleep(1)
 
 # Replace the Pico to Buddy
 # We can specify specific location
@@ -34,8 +34,7 @@ utime.sleep(1)
 lcd.setCursor(0, 0)
 lcd.print("Hello, Buddy!")
 
-
-utime.sleep(1)
+sleep(1)
 
 # Clear the LCD
 lcd.clear()
